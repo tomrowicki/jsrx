@@ -28,7 +28,7 @@ module.exports = function() {
       return [accumulatedValue];
     }
   };
-  
+
   Array.prototype.concatAll = function() {
     var results = [];
     this.forEach(function(subArray) {
@@ -44,5 +44,14 @@ module.exports = function() {
       return projectionFunctionThatReturnsArray(item);
     }).
     concatAll();
+  };
+
+  Array.zip = function(left, right, combinerFunction) {
+  	var counter,
+  		results = [];
+  	for(counter = 0; counter < Math.min(left.length, right.length); counter++) {
+      results.push(combinerFunction(left[counter], right[counter]));
+  	}
+  	return results;
   };
 };
