@@ -61,7 +61,7 @@ var ex26 = function() {
                       "time": bookmarks.filter(bookmark => {return bookmark.videoId === video.id}).map(bookmark => {
                         return bookmark.time;
                       })[0],
-                      "boxart": boxarts.filter(boxart => {return boxart.videoId === video.id}).reduce(function(acc,curr) {
+                      "boxart": boxarts.filter(boxart => {return boxart.videoId === video.id}).reduce((acc,curr) => {
 								                return acc.width * acc.height < curr.width * curr.height ? acc : curr;
                               }).map(boxart => {return boxart.url})[0]
                      };
