@@ -1,3 +1,5 @@
+require('./global_functions.js')();
+
 var exercise11 = function() {
 	var movieLists = [
 			{
@@ -47,20 +49,12 @@ var exercise11 = function() {
 	// ------------   INSERT CODE HERE!  -----------------------------------
 	// Use map and concatAll to flatten the movieLists in a list of video ids.
 	// ------------   INSERT CODE HERE!  -----------------------------------
-
 	// return movieLists // Complete this expression!
   return movieLists.map(function(movieGenre) {
     return movieGenre.videos.map(function(video) {
       return video.id;
     })
   }).concatAll();
-
 };
-
-Array.prototype.concatAll = function() {
-	var results = [];
-	this.forEach(function(subArray) {
-		results.push.apply(results, subArray);
-	});
 
 console.log(exercise11());
