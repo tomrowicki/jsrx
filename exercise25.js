@@ -34,7 +34,7 @@ var ex25 = function() {
 			}
 		];
 
-	return lists.map(function(list) {
+	return lists.map(list = {
     return { name : list.name,
               videos : videos.filter(function(video){
               return video.listId === list.id;
